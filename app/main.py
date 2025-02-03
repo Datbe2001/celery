@@ -11,6 +11,6 @@ def read_root():
 # Endpoint to trigger task (if needed)
 @app.get("/trigger-task")
 def trigger_task():
-    from app.tasks import call_api
-    call_api.delay()
+    from app.tasks import celery_task_handler
+    celery_task_handler.call_api.delay()
     return {"message": "Task is activated"}

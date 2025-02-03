@@ -21,4 +21,4 @@ services:
     build: .
     depends_on:
       - redis
-    command: celery -A app.celery_worker:celery worker --beat --loglevel=info
+    command: celery -A app.celery_worker:celery_instance worker --beat --loglevel=info
